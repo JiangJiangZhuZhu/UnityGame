@@ -26,7 +26,7 @@ public class PlayerHud : MonoBehaviour
    */
   private void OnGUI()
   {
-    if(playerController.GetHealth() == 6)
+    if (playerController.GetHealth() == 6)
     {
       GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
       GUI.DrawTexture(new Rect(60, 10, 50, 50), heart);

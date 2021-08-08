@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Behaviour to handle keyboard input and also store the player's
@@ -9,16 +11,19 @@ public class PlayerController : MonoBehaviour
   private Rigidbody2D rigidbody2d;
   private int health;
   private bool canJump;
+    private DateTime start;
 
-  /*
-   * Apply initial health and also store the Rigidbody2D reference for
-   * future because GetComponent<T> is relatively expensive.
-   */
-  private void Start()
-  {
-    health = 6;
-    rigidbody2d = GetComponent<Rigidbody2D>();
-  }
+    /*
+     * Apply initial health and also store the Rigidbody2D reference for
+     * future because GetComponent<T> is relatively expensive.
+     */
+    private void Start()
+    {
+        Global.score = 0;
+        health = 6;
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        start = DateTime.Now;
+    }
 
   /*
    * Remove one health unit from player and if health becomes 0, change
@@ -30,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
     if(health < 1)
     {
-      Application.LoadLevel("EndGame");
+            Global.score = (DateTime.Now - start).Seconds*10;
+            Global.dateTime = DateTime.Now;
+            SceneManager.LoadScene("EndGame");
     }
   }
 
@@ -60,12 +67,11 @@ public class PlayerController : MonoBehaviour
       }
     }
   }
-
-  /*
-   * If the player has collided with the ground, set the canJump flag so that
-   * the player can trigger another jump.
-   */
-  private void OnCollisionEnter2D(Collision2D other)
+    /*
+     * If the player has collided with the ground, set the canJump flag so that
+     * the player can trigger another jump.
+     */
+    private void OnCollisionEnter2D(Collision2D other)
   {
     canJump = true;
   }
