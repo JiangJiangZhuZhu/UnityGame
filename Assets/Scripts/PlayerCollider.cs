@@ -18,8 +18,6 @@ public class PlayerCollider : MonoBehaviour
 
     // Register damage with player
     playerController.Damage();
-
-    // Make this object disappear
-    GameObject.Destroy(gameObject);
+    Destroy(gameObject);
   }
 }
