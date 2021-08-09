@@ -6,7 +6,7 @@ public class BackGroundControl : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float Speed = 30f;
+    public float Speed = 10f;
     // Update is called once per frame
     void Update()
     {
