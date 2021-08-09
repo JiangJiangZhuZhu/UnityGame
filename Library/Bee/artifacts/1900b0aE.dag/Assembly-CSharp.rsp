@@ -321,6 +321,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/AudioManager.cs"
 "Assets/Scripts/BackGroundControl.cs"
+"Assets/Scripts/CarrotControl.cs"
 "Assets/Scripts/EndGame.cs"
 "Assets/Scripts/Global.cs"
 "Assets/Scripts/GroundControl.cs"

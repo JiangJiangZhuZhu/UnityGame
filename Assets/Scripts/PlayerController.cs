@@ -32,15 +32,25 @@ public class PlayerController : MonoBehaviour
   public void Damage()
   {
     health -= 1;
-
+    AudioManager.Instance.Play("Boss死了");
     if(health < 1)
     {
-            Global.score = (DateTime.Now - start).Seconds*10;
+         //AudioManager.Instance.Play("Boss死了");
+             Global.score = (DateTime.Now - start).Seconds*10;
             Global.dateTime = DateTime.Now;
             SceneManager.LoadScene("EndGame");
     }
   }
 
+
+  public void AddHealth()
+  {
+      if (health < 6)
+      {
+          health += 1;
+      }
+
+  }
   /*
    * Accessor for health variable, used by he HUD to display health.
    */

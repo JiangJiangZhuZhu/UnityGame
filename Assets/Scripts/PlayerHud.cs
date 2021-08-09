@@ -16,8 +16,8 @@ public class PlayerHud : MonoBehaviour
   private void Start()
   {
     playerController = GetComponent<PlayerController>();
-    heart = Resources.Load<Texture2D>("heart");
-    halfHeart = Resources.Load<Texture2D>("halfHeart");
+    heart = Resources.Load<Texture2D>("胡萝卜两个");
+    halfHeart = Resources.Load<Texture2D>("胡萝卜单个");
   }
 
   /*
@@ -28,29 +28,29 @@ public class PlayerHud : MonoBehaviour
   {
     if (playerController.GetHealth() == 6)
     {
-      GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(60, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(110, 10, 50, 50), heart);
+      GUI.DrawTexture(new Rect(10, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(110, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(210, 10, 100, 50), heart);
     }
     else if(playerController.GetHealth() == 5)
     {
-      GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(60, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(110, 10, 50, 50), halfHeart);
+      GUI.DrawTexture(new Rect(10, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(110, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(210, 10, 50, 50), halfHeart);
     }
     else if(playerController.GetHealth() == 4)
     {
-      GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(60, 10, 50, 50), heart);
+      GUI.DrawTexture(new Rect(10, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(110, 10, 100, 50), heart);
     }
     else if(playerController.GetHealth() == 3)
     {
-      GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
-      GUI.DrawTexture(new Rect(60, 10, 50, 50), halfHeart);
+      GUI.DrawTexture(new Rect(10, 10, 100, 50), heart);
+      GUI.DrawTexture(new Rect(110, 10, 50, 50), halfHeart);
     }
     else if(playerController.GetHealth() == 2)
     {
-      GUI.DrawTexture(new Rect(10, 10, 50, 50), heart);
+      GUI.DrawTexture(new Rect(10, 10, 100, 50), heart);
     }
     else if(playerController.GetHealth() == 1)
     {
