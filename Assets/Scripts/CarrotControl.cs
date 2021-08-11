@@ -24,7 +24,7 @@ public class CarrotControl : MonoBehaviour
         // Register damage with player
         playerController.AddHealth();
         Global.score += Global.bonus;
-        AudioManager.Instance.Play("���");
+        AudioManager.Instance.Play("金币");
         Destroy(gameObject);
     }
 }
