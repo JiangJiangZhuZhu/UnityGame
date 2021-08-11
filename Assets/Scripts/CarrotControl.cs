@@ -23,7 +23,8 @@ public class CarrotControl : MonoBehaviour
 
         // Register damage with player
         playerController.AddHealth();
-        AudioManager.Instance.Play("½ð±Ò");
+        Global.score += Global.bonus;
+        AudioManager.Instance.Play("ï¿½ï¿½ï¿½");
         Destroy(gameObject);
     }
 }

@@ -31,4 +31,8 @@ public class StartAndBack : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void OnExitClicked()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 }

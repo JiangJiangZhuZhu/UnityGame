@@ -18,6 +18,7 @@ public class PlayerCollider : MonoBehaviour
 
     // Register damage with player
     playerController.Damage();
+        Global.score -= Global.punish;
     Destroy(gameObject);
   }
 }
